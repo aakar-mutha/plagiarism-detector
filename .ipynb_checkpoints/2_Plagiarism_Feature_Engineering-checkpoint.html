@@ -13128,7 +13128,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NOTE:</span>
@@ -13143,10 +13143,40 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>--2020-07-02 20:39:34--  https://s3.amazonaws.com/video.udacity-data.com/topher/2019/January/5c4147f9_data/data.zip
+Resolving s3.amazonaws.com (s3.amazonaws.com)... 52.216.144.45
+Connecting to s3.amazonaws.com (s3.amazonaws.com)|52.216.144.45|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 113826 (111K) [application/zip]
+Saving to: ‘data.zip.1’
+
+data.zip.1          100%[===================&gt;] 111.16K   134KB/s    in 0.8s    
+
+2020-07-02 20:39:36 (134 KB/s) - ‘data.zip.1’ saved [113826/113826]
+
+Archive:  data.zip
+replace data/.DS_Store? [y]es, [n]o, [A]ll, [N]one, [r]ename: ^C
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import libraries</span>
@@ -13170,7 +13200,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">csv_file</span> <span class="o">=</span> <span class="s1">&#39;data/file_information.csv&#39;</span>
@@ -13190,7 +13220,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13331,7 +13361,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># csv_file=&#39;data/file_information.csv&#39;</span>
@@ -13350,7 +13380,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13410,310 +13440,10 @@ div#notebook {
       <td>non</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>g0pB_taska.txt</td>
-      <td>a</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>g0pB_taskb.txt</td>
-      <td>b</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>g0pB_taskc.txt</td>
-      <td>c</td>
-      <td>cut</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>g0pB_taskd.txt</td>
-      <td>d</td>
-      <td>light</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>g0pB_taske.txt</td>
-      <td>e</td>
-      <td>heavy</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>g0pC_taska.txt</td>
-      <td>a</td>
-      <td>heavy</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>g0pC_taskb.txt</td>
-      <td>b</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>g0pC_taskc.txt</td>
-      <td>c</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>g0pC_taskd.txt</td>
-      <td>d</td>
-      <td>cut</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>g0pC_taske.txt</td>
-      <td>e</td>
-      <td>light</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>g0pD_taska.txt</td>
-      <td>a</td>
-      <td>cut</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>g0pD_taskb.txt</td>
-      <td>b</td>
-      <td>light</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>g0pD_taskc.txt</td>
-      <td>c</td>
-      <td>heavy</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>g0pD_taskd.txt</td>
-      <td>d</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>g0pD_taske.txt</td>
-      <td>e</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>g0pE_taska.txt</td>
-      <td>a</td>
-      <td>light</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>g0pE_taskb.txt</td>
-      <td>b</td>
-      <td>heavy</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>g0pE_taskc.txt</td>
-      <td>c</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>g0pE_taskd.txt</td>
-      <td>d</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>g0pE_taske.txt</td>
-      <td>e</td>
-      <td>cut</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>g1pA_taska.txt</td>
-      <td>a</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>g1pA_taskb.txt</td>
-      <td>b</td>
-      <td>heavy</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>g1pA_taskc.txt</td>
-      <td>c</td>
-      <td>light</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>g1pA_taskd.txt</td>
-      <td>d</td>
-      <td>cut</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>g1pA_taske.txt</td>
-      <td>e</td>
-      <td>non</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>70</th>
-      <td>g3pC_taska.txt</td>
-      <td>a</td>
-      <td>cut</td>
-    </tr>
-    <tr>
-      <th>71</th>
-      <td>g3pC_taskb.txt</td>
-      <td>b</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>72</th>
-      <td>g3pC_taskc.txt</td>
-      <td>c</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>73</th>
-      <td>g3pC_taskd.txt</td>
-      <td>d</td>
-      <td>heavy</td>
-    </tr>
-    <tr>
-      <th>74</th>
-      <td>g3pC_taske.txt</td>
-      <td>e</td>
-      <td>light</td>
-    </tr>
-    <tr>
-      <th>75</th>
-      <td>g4pB_taska.txt</td>
-      <td>a</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>g4pB_taskb.txt</td>
-      <td>b</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>77</th>
-      <td>g4pB_taskc.txt</td>
-      <td>c</td>
-      <td>heavy</td>
-    </tr>
-    <tr>
-      <th>78</th>
-      <td>g4pB_taskd.txt</td>
-      <td>d</td>
-      <td>light</td>
-    </tr>
-    <tr>
-      <th>79</th>
-      <td>g4pB_taske.txt</td>
-      <td>e</td>
-      <td>cut</td>
-    </tr>
-    <tr>
-      <th>80</th>
-      <td>g4pC_taska.txt</td>
-      <td>a</td>
-      <td>cut</td>
-    </tr>
-    <tr>
-      <th>81</th>
-      <td>g4pC_taskb.txt</td>
-      <td>b</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>82</th>
-      <td>g4pC_taskc.txt</td>
-      <td>c</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>83</th>
-      <td>g4pC_taskd.txt</td>
-      <td>d</td>
-      <td>heavy</td>
-    </tr>
-    <tr>
-      <th>84</th>
-      <td>g4pC_taske.txt</td>
-      <td>e</td>
-      <td>light</td>
-    </tr>
-    <tr>
-      <th>85</th>
-      <td>g4pD_taska.txt</td>
-      <td>a</td>
-      <td>light</td>
-    </tr>
-    <tr>
-      <th>86</th>
-      <td>g4pD_taskb.txt</td>
-      <td>b</td>
-      <td>cut</td>
-    </tr>
-    <tr>
-      <th>87</th>
-      <td>g4pD_taskc.txt</td>
-      <td>c</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>88</th>
-      <td>g4pD_taskd.txt</td>
-      <td>d</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>89</th>
-      <td>g4pD_taske.txt</td>
-      <td>e</td>
-      <td>heavy</td>
-    </tr>
-    <tr>
-      <th>90</th>
-      <td>g4pE_taska.txt</td>
-      <td>a</td>
-      <td>heavy</td>
-    </tr>
-    <tr>
-      <th>91</th>
-      <td>g4pE_taskb.txt</td>
-      <td>b</td>
-      <td>light</td>
-    </tr>
-    <tr>
-      <th>92</th>
-      <td>g4pE_taskc.txt</td>
-      <td>c</td>
-      <td>cut</td>
-    </tr>
-    <tr>
-      <th>93</th>
-      <td>g4pE_taskd.txt</td>
-      <td>d</td>
-      <td>non</td>
-    </tr>
-    <tr>
-      <th>94</th>
-      <td>g4pE_taske.txt</td>
-      <td>e</td>
-      <td>non</td>
     </tr>
     <tr>
       <th>95</th>
@@ -13759,7 +13489,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Read in a csv file and return a transformed dataframe</span>
@@ -13818,7 +13548,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># informal testing, print out the results of a called function</span>
@@ -13840,7 +13570,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13953,7 +13683,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># test cell that creates `transformed_df`, if tests are passed</span>
@@ -13999,7 +13729,7 @@ Example data:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -14092,7 +13822,7 @@ Example data:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -14115,7 +13845,7 @@ Example data:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -14199,7 +13929,7 @@ Example data:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># after running the cell above</span>
@@ -14253,7 +13983,7 @@ Example data:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">random_seed</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># can change; set for reproducibility</span>
@@ -14281,7 +14011,7 @@ Example data:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -14463,45 +14193,6 @@ $$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ans_i = (complete_df[&quot;File&quot;][complete_df[&quot;File&quot;] == &quot;g0pA_taskb.txt&quot;]).index</span>
-<span class="c1"># ans_text = complete_df.iloc[ans_i][&quot;Text&quot;].values[0]</span>
-<span class="c1"># # print(ans_i[0])</span>
-<span class="c1"># for i in range(len(complete_df[&quot;File&quot;])):</span>
-<span class="c1">#     if complete_df[&quot;File&quot;][i] == &quot;g0pA_taskb.txt&quot;:</span>
-<span class="c1">#         print(complete_df[&quot;Text&quot;][i])</span>
-<span class="n">complete_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>100</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
@@ -14521,22 +14212,25 @@ $$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(
 <span class="sd">           between an answer text and its source text.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     
-    <span class="c1"># getting answer text</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;File&quot;</span><span class="p">])):</span>
-        <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;File&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">answer_filename</span><span class="p">:</span>
-            <span class="n">ans_i</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="n">ans_t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Text&quot;</span><span class="p">][</span><span class="n">ans_i</span><span class="p">]</span>
+    <span class="c1"># get answer text</span>
+    <span class="n">answer_idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Text&quot;</span><span class="p">][</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;File&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">answer_filename</span><span class="p">])</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">a_text</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">answer_idx</span><span class="p">][</span><span class="s2">&quot;Text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     
-    <span class="c1"># getting source text</span>
-    <span class="n">task</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Task&quot;</span><span class="p">][</span><span class="n">ans_i</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-        <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Task&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">task</span> <span class="ow">and</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-            <span class="n">src_i</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="n">src_t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Text&quot;</span><span class="p">][</span><span class="n">src_i</span><span class="p">]</span>    
+    <span class="c1"># get source text</span>
+    <span class="n">task</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">answer_idx</span><span class="p">][</span><span class="s2">&quot;Task&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">source_idx</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Task</span> <span class="o">==</span> <span class="n">task</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Class</span><span class="o">==-</span><span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">s_text</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">source_idx</span><span class="p">][</span><span class="s2">&quot;Text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
     <span class="c1"># inititalize counts_ngrams</span>
-    <span class="n">ngram_counts_array</span> <span class="o">=</span> <span class="p">(</span><span class="n">CountVectorizer</span><span class="p">(</span><span class="n">analyzer</span><span class="o">=</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">([</span><span class="n">ans_t</span><span class="p">,</span> <span class="n">src_t</span><span class="p">]))</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
- 
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">ngram_counts_array</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">))</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ngram_counts_array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">counts_ngrams</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">analyzer</span><span class="o">=</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">tm_counts</span> <span class="o">=</span> <span class="n">counts_ngrams</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">([</span><span class="n">a_text</span><span class="p">,</span> <span class="n">s_text</span><span class="p">])</span>
+    <span class="n">ngram_array</span> <span class="o">=</span> <span class="n">tm_counts</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+    <span class="n">intersection</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">ngram_array</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">a_count</span> <span class="o">=</span> <span class="n">ngram_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    
+    <span class="c1"># containment </span>
+    <span class="n">containment</span> <span class="o">=</span> <span class="n">intersection</span><span class="o">/</span><span class="n">a_count</span>
+    <span class="k">return</span> <span class="n">containment</span>
 </pre></div>
 
     </div>
@@ -14660,8 +14354,9 @@ $$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>Contrainment is a form of data preprocessing which is necessary to do before feeding into our model.</li>
-<li>Processing will not interfear since we have not started training yet.</li>
+<li>Containment is calculated seperately, irrespective of whether they are labeled as training or testing data. </li>
+<li>For every student answer, the answer is compared to the respective original source and a containment value is calculated. </li>
+<li>Because they are compared individually the containment calculation between test and training data do not influence each other.</li>
 </ul>
 
 </div>
@@ -14753,22 +14448,23 @@ $$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(
     
     <span class="c1"># your code here</span>
     
-    <span class="n">ans_w</span> <span class="o">=</span> <span class="n">answer_text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    <span class="n">src_w</span> <span class="o">=</span> <span class="n">source_text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">a_words</span> <span class="o">=</span> <span class="n">answer_text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">s_words</span> <span class="o">=</span> <span class="n">source_text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        
     <span class="c1"># create matrix </span>
-    <span class="n">lcs_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">src_w</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ans_w</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">lcs_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">s_words</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_words</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">w1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">src_w</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">w2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ans_w</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">w1</span> <span class="o">==</span> <span class="n">w2</span><span class="p">:</span>
-                <span class="n">lcs_mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">lcs_mat</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">s_word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s_words</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">a_word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_words</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">s_word</span> <span class="o">==</span> <span class="n">a_word</span><span class="p">:</span>
+                <span class="n">lcs_matrix</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">lcs_matrix</span><span class="p">[</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">a</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">lcs_mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">lcs_mat</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">lcs_mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">lcs_matrix</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">lcs_matrix</span><span class="p">[</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">a</span><span class="p">],</span> <span class="n">lcs_matrix</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">a</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     
-    <span class="n">num</span> <span class="o">=</span> <span class="n">lcs_mat</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">src_w</span><span class="p">)][</span><span class="nb">len</span><span class="p">(</span><span class="n">ans_w</span><span class="p">)]</span>
-    <span class="n">lcs</span> <span class="o">=</span> <span class="n">num</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ans_w</span><span class="p">)</span>
+    <span class="n">lcs</span> <span class="o">=</span> <span class="n">lcs_matrix</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s_words</span><span class="p">)][</span><span class="nb">len</span><span class="p">(</span><span class="n">a_words</span><span class="p">)]</span>
+    <span class="n">lcs_norm</span> <span class="o">=</span> <span class="n">lcs</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_words</span><span class="p">)</span>
     
-    <span class="k">return</span> <span class="n">lcs</span>
+    <span class="k">return</span> <span class="n">lcs_norm</span>
 </pre></div>
 
     </div>
@@ -15779,13 +15475,16 @@ Features:  [&#39;c_1&#39;, &#39;c_2&#39;, &#39;c_3&#39;, &#39;c_4&#39;, &#39;c_5
 <span class="sd">       :param selected_features: An array of selected features that correspond to certain columns in `features_df`</span>
 <span class="sd">       :return: training and test features and labels: (train_x, train_y), (test_x, test_y)&#39;&#39;&#39;</span>
     
-    <span class="n">trans_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">complete_df</span><span class="p">,</span> <span class="n">features_df</span><span class="p">[</span><span class="n">selected_features</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    
-    <span class="n">train_x</span> <span class="o">=</span> <span class="n">trans_df</span><span class="p">[</span><span class="n">trans_df</span><span class="o">.</span><span class="n">Datatype</span><span class="o">==</span><span class="s2">&quot;train&quot;</span><span class="p">][</span><span class="n">selected_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-    <span class="n">train_y</span> <span class="o">=</span> <span class="n">trans_df</span><span class="p">[</span><span class="n">trans_df</span><span class="o">.</span><span class="n">Datatype</span><span class="o">==</span><span class="s2">&quot;train&quot;</span><span class="p">][</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">complete_df</span><span class="p">,</span> <span class="n">features_df</span><span class="p">[</span><span class="n">selected_features</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">test_x</span> <span class="o">=</span> <span class="n">trans_df</span><span class="p">[</span><span class="n">trans_df</span><span class="o">.</span><span class="n">Datatype</span><span class="o">==</span><span class="s2">&quot;test&quot;</span><span class="p">][</span><span class="n">selected_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-    <span class="n">test_y</span> <span class="o">=</span> <span class="n">trans_df</span><span class="p">[</span><span class="n">trans_df</span><span class="o">.</span><span class="n">Datatype</span><span class="o">==</span><span class="s2">&quot;test&quot;</span><span class="p">][</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="c1"># train</span>
+
+    <span class="n">train_x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Datatype</span><span class="o">==</span><span class="s2">&quot;train&quot;</span><span class="p">][</span><span class="n">selected_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">train_y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Datatype</span><span class="o">==</span><span class="s2">&quot;train&quot;</span><span class="p">][</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="c1"># test</span>
+    <span class="n">test_x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Datatype</span><span class="o">==</span><span class="s2">&quot;test&quot;</span><span class="p">][</span><span class="n">selected_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">test_y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Datatype</span><span class="o">==</span><span class="s2">&quot;test&quot;</span><span class="p">][</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
     <span class="k">return</span> <span class="p">(</span><span class="n">train_x</span><span class="p">,</span> <span class="n">train_y</span><span class="p">),</span> <span class="p">(</span><span class="n">test_x</span><span class="p">,</span> <span class="n">test_y</span><span class="p">)</span>
     
@@ -15854,61 +15553,12 @@ Features:  [&#39;c_1&#39;, &#39;c_2&#39;, &#39;c_3&#39;, &#39;c_4&#39;, &#39;c_5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[32]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7ff76d62e908&gt;</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Select your list of features, this should be column names from features_df</span>
 <span class="c1"># ex. [&#39;c_1&#39;, &#39;lcs_word&#39;]</span>
-<span class="n">selected_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;c_1&#39;</span><span class="p">,</span> <span class="s1">&#39;c_4&#39;</span><span class="p">,</span> <span class="s1">&#39;lcs_word&#39;</span><span class="p">]</span>
+<span class="n">selected_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;c_1&#39;</span><span class="p">,</span> <span class="s1">&#39;c_5&#39;</span><span class="p">,</span> <span class="s1">&#39;lcs_word&#39;</span><span class="p">]</span>
 
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -15944,15 +15594,15 @@ Test size:  25
 
 Training df sample: 
  [[0.39814815 0.         0.19178082]
- [0.86936937 0.51598174 0.84649123]
- [0.59358289 0.10869565 0.31606218]
- [0.54450262 0.00531915 0.24257426]
- [0.32950192 0.00387597 0.16117216]
- [0.59030837 0.00446429 0.30165289]
- [0.75977654 0.30681818 0.48430493]
+ [0.86936937 0.44954128 0.84649123]
+ [0.59358289 0.08196721 0.31606218]
+ [0.54450262 0.         0.24257426]
+ [0.32950192 0.         0.16117216]
+ [0.59030837 0.         0.30165289]
+ [0.75977654 0.24571429 0.48430493]
  [0.51612903 0.         0.27083333]
- [0.44086022 0.00546448 0.22395833]
- [0.97945205 0.83216783 0.9       ]]
+ [0.44086022 0.         0.22395833]
+ [0.97945205 0.78873239 0.9       ]]
 </pre>
 </div>
 </div>
@@ -15973,8 +15623,10 @@ Training df sample:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>I decided to choose 0.9 as the containment threshold. </li>
-<li>So, c_4 is the smallest n_gram corresponding to c_1. As shown in the heatmap above</li>
+<li>I started with the decision to include the <code>lcs_word</code>  feature as it seemed important based on the paper. </li>
+<li>From here I wanted to include other features of c1-c14 that have a correlation coefficient of 0.95 or fewer.</li>
+<li>Starting from <code>lcs_word</code> the first c-feature that was below this threshold was "C_4", hence I added this to my list of features</li>
+<li>C_4 was highly correlated (correlation coefficient &gt; 0.95) to all other c-features until C_14 and that is why I added <code>C_14</code> to the list of features.</li>
 </ul>
 
 </div>
@@ -15999,7 +15651,7 @@ Training df sample:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_csv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">):</span>
@@ -16015,7 +15667,8 @@ Training df sample:
 
     <span class="c1"># your code here</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span><span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     
     <span class="c1"># nothing is returned, but a print statement indicates that the function has run</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Path created: &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
@@ -16036,7 +15689,7 @@ Training df sample:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -16087,7 +15740,7 @@ Tests passed!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># delete the test csv file, generated above</span>
@@ -16109,7 +15762,7 @@ Tests passed!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># can change directory, if you want</span>

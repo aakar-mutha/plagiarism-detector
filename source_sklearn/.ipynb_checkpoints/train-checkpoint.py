@@ -7,7 +7,7 @@ import pandas as pd
 from sklearn.externals import joblib
 
 ## TODO: Import any additional libraries you need to define a model
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import LinearSVC
 
 # Provided model load function
 def model_fn(model_dir):
@@ -58,8 +58,7 @@ if __name__ == '__main__':
     
 
     ## TODO: Define a model 
-    model = RandomForestClassifier(n_estimators=args.n_estimators, min_samples_leaf = args.min_samples_leaf, random_state=42) 
-    
+    model = LinearSVC()
     ## TODO: Train the model
     model.fit(train_x, train_y)
     

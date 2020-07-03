@@ -13017,6 +13017,25 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            /*preferredFont: "TeX",*/
+            /*availableFonts: ["TeX", "STIX"],*/
+            styles: {
+                scale: 100,
+                ".MathJax_Display": {
+                    "font-size": "100%",
+                }
+            }
+        }
+    });
+</script>
+    
+    </style>
 
 
 <style type="text/css">
@@ -13134,9 +13153,28 @@ div#notebook {
 
 <span class="c1"># create an S3 bucket</span>
 <span class="n">bucket</span> <span class="o">=</span> <span class="n">sagemaker_session</span><span class="o">.</span><span class="n">default_bucket</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bucket</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sagemaker-ap-south-1-161736531006
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13194,9 +13232,29 @@ div#notebook {
 
 <span class="c1"># upload all data to S3</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">sagemaker_session</span><span class="o">.</span><span class="n">upload_data</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span> <span class="n">key_prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">)</span>
+<span class="n">input_data</span> <span class="o">=</span> <span class="n">sagemaker_session</span><span class="o">.</span><span class="n">upload_data</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="n">data_dir</span><span class="p">,</span> <span class="n">bucket</span> <span class="o">=</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">key_prefix</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>s3://sagemaker-ap-south-1-161736531006/sagemaker/plagiarism-data
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13319,7 +13377,8 @@ Test passed!
 <span class="ansi-blue-fg">from</span> <span class="ansi-cyan-fg ansi-underline">sklearn.externals</span> <span class="ansi-blue-fg">import</span> joblib
 
 <span class="ansi-white-fg">## TODO: Import any additional libraries you need to define a model</span>
-<span class="ansi-blue-fg">from</span> <span class="ansi-cyan-fg ansi-underline">sklearn.ensemble</span> <span class="ansi-blue-fg">import</span> RandomForestClassifier
+<span class="ansi-blue-fg">from</span> <span class="ansi-cyan-fg ansi-underline">sklearn.svm</span> <span class="ansi-blue-fg">import</span> LinearSVC
+
 
 <span class="ansi-white-fg"># Provided model load function</span>
 <span class="ansi-blue-fg">def</span> <span class="ansi-green-fg">model_fn</span>(model_dir):
@@ -13327,20 +13386,19 @@ Test passed!
 <span class="ansi-yellow-fg">    in the main if statement.</span>
 <span class="ansi-yellow-fg">    &#34;&#34;&#34;</span>
     <span class="ansi-blue-fg">print</span>(<span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">Loading model.</span><span class="ansi-yellow-fg">&#34;</span>)
-    
+
     <span class="ansi-white-fg"># load using joblib</span>
     model = joblib.load(os.path.join(model_dir, <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">model.joblib</span><span class="ansi-yellow-fg">&#34;</span>))
     <span class="ansi-blue-fg">print</span>(<span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">Done loading model.</span><span class="ansi-yellow-fg">&#34;</span>)
-    
+
     <span class="ansi-blue-fg">return</span> model
 
 
 <span class="ansi-white-fg">## TODO: Complete the main code</span>
 <span class="ansi-blue-fg">if</span> <span class="ansi-red-fg">__name__</span> == <span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">__main__</span><span class="ansi-yellow-fg">&#39;</span>:
-    
     <span class="ansi-white-fg"># All of the model parameters and training parameters are sent as arguments</span>
     <span class="ansi-white-fg"># when this script is executed, during a training job</span>
-    
+
     <span class="ansi-white-fg"># Here we set up an argument parser to easily access the parameters</span>
     parser = argparse.ArgumentParser()
 
@@ -13349,12 +13407,9 @@ Test passed!
     parser.add_argument(<span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">--output-data-dir</span><span class="ansi-yellow-fg">&#39;</span>, <span class="ansi-cyan-fg">type</span>=<span class="ansi-cyan-fg">str</span>, default=os.environ[<span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">SM_OUTPUT_DATA_DIR</span><span class="ansi-yellow-fg">&#39;</span>])
     parser.add_argument(<span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">--model-dir</span><span class="ansi-yellow-fg">&#39;</span>, <span class="ansi-cyan-fg">type</span>=<span class="ansi-cyan-fg">str</span>, default=os.environ[<span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">SM_MODEL_DIR</span><span class="ansi-yellow-fg">&#39;</span>])
     parser.add_argument(<span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">--data-dir</span><span class="ansi-yellow-fg">&#39;</span>, <span class="ansi-cyan-fg">type</span>=<span class="ansi-cyan-fg">str</span>, default=os.environ[<span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">SM_CHANNEL_TRAIN</span><span class="ansi-yellow-fg">&#39;</span>])
-    
+
     <span class="ansi-white-fg">## TODO: Add any additional arguments that you will need to pass into your model</span>
-    parser.add_argument(<span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">--n_estimators</span><span class="ansi-yellow-fg">&#39;</span>, <span class="ansi-cyan-fg">type</span>=<span class="ansi-cyan-fg">int</span>, default=<span class="ansi-blue-fg">100</span>)
-    parser.add_argument(<span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">--min_samples_leaf</span><span class="ansi-yellow-fg">&#39;</span>, <span class="ansi-cyan-fg">type</span>=<span class="ansi-cyan-fg">int</span>, default=<span class="ansi-blue-fg">3</span>)
-    
-    
+
     <span class="ansi-white-fg"># args holds all passed-in arguments</span>
     args = parser.parse_args()
 
@@ -13363,22 +13418,18 @@ Test passed!
     train_data = pd.read_csv(os.path.join(training_dir, <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">train.csv</span><span class="ansi-yellow-fg">&#34;</span>), header=<span class="ansi-cyan-fg">None</span>, names=<span class="ansi-cyan-fg">None</span>)
 
     <span class="ansi-white-fg"># Labels are in the first column</span>
-    train_y = train_data.iloc[:,<span class="ansi-blue-fg">0</span>]
-    train_x = train_data.iloc[:,<span class="ansi-blue-fg">1</span>:]
-    
-    
-    <span class="ansi-white-fg">## --- Your code here --- ##</span>
-    
+    train_y = train_data.iloc[:, <span class="ansi-blue-fg">0</span>]
+    train_x = train_data.iloc[:, <span class="ansi-blue-fg">1</span>:]
 
-    <span class="ansi-white-fg">## TODO: Define a model </span>
-    model = RandomForestClassifier(n_estimators=args.n_estimators, min_samples_leaf = args.min_samples_leaf, random_state=<span class="ansi-blue-fg">42</span>) 
-    
+    <span class="ansi-white-fg">## --- Your code here --- ##</span>
+
+    <span class="ansi-white-fg">## TODO: Define a model</span>
+    model = LinearSVC()
+
     <span class="ansi-white-fg">## TODO: Train the model</span>
     model.fit(train_x, train_y)
-    
-    
+
     <span class="ansi-white-fg">## --- End of your code  --- ##</span>
-    
 
     <span class="ansi-white-fg"># Save the trained model</span>
     joblib.dump(model, os.path.join(args.model_dir, <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">model.joblib</span><span class="ansi-yellow-fg">&#34;</span>))
@@ -13445,8 +13496,7 @@ Test passed!
                     <span class="n">role</span><span class="o">=</span><span class="n">role</span><span class="p">,</span>
                     <span class="n">train_instance_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                     <span class="n">train_instance_type</span><span class="o">=</span><span class="s2">&quot;ml.m4.xlarge&quot;</span><span class="p">,</span>
-                    <span class="n">sagemaker_session</span><span class="o">=</span><span class="n">sagemaker_session</span><span class="p">,</span>
-                    <span class="n">hyperparameters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;n_estimators&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="s2">&quot;min_samples_leaf&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">})</span>
+                    <span class="n">sagemaker_session</span><span class="o">=</span><span class="n">sagemaker_session</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13470,7 +13520,7 @@ Test passed!
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
 
 <span class="c1"># Train your estimator on S3 training data</span>
-<span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">({</span><span class="s2">&quot;train&quot;</span><span class="p">:</span><span class="s2">&quot;s3://sagemaker-ap-south-1-161736531006/sagemaker/plagiarism-data/train.csv&quot;</span><span class="p">})</span>
+<span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">({</span><span class="s1">&#39;train&#39;</span><span class="p">:</span> <span class="n">input_data</span><span class="p">})</span>
 </pre></div>
 
     </div>
@@ -13487,31 +13537,30 @@ Test passed!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2020-07-02 14:49:29 Starting - Starting the training job...
-2020-07-02 14:49:32 Starting - Launching requested ML instances......
-2020-07-02 14:50:38 Starting - Preparing the instances for training......
-2020-07-02 14:51:36 Downloading - Downloading input data...
-2020-07-02 14:52:28 Training - Training image download completed. Training in progress.
-2020-07-02 14:52:28 Uploading - Uploading generated training model.<span class="ansi-blue-fg">2020-07-02 14:52:23,785 sagemaker-containers INFO     Imported framework sagemaker_sklearn_container.training</span>
-<span class="ansi-blue-fg">2020-07-02 14:52:23,788 sagemaker-containers INFO     No GPUs detected (normal if no gpus installed)</span>
-<span class="ansi-blue-fg">2020-07-02 14:52:23,802 sagemaker_sklearn_container.training INFO     Invoking user training script.</span>
-<span class="ansi-blue-fg">2020-07-02 14:52:24,068 sagemaker-containers INFO     Module train does not provide a setup.py. </span>
+<pre>2020-07-03 09:16:43 Starting - Starting the training job...
+2020-07-03 09:16:45 Starting - Launching requested ML instances......
+2020-07-03 09:17:47 Starting - Preparing the instances for training......
+2020-07-03 09:19:02 Downloading - Downloading input data
+2020-07-03 09:19:02 Training - Downloading the training image..<span class="ansi-blue-fg">2020-07-03 09:19:22,011 sagemaker-containers INFO     Imported framework sagemaker_sklearn_container.training</span>
+<span class="ansi-blue-fg">2020-07-03 09:19:22,014 sagemaker-containers INFO     No GPUs detected (normal if no gpus installed)</span>
+<span class="ansi-blue-fg">2020-07-03 09:19:22,026 sagemaker_sklearn_container.training INFO     Invoking user training script.</span>
+<span class="ansi-blue-fg">2020-07-03 09:19:22,291 sagemaker-containers INFO     Module train does not provide a setup.py. </span>
 <span class="ansi-blue-fg">Generating setup.py</span>
-<span class="ansi-blue-fg">2020-07-02 14:52:24,068 sagemaker-containers INFO     Generating setup.cfg</span>
-<span class="ansi-blue-fg">2020-07-02 14:52:24,069 sagemaker-containers INFO     Generating MANIFEST.in</span>
-<span class="ansi-blue-fg">2020-07-02 14:52:24,069 sagemaker-containers INFO     Installing module with the following command:</span>
+<span class="ansi-blue-fg">2020-07-03 09:19:22,291 sagemaker-containers INFO     Generating setup.cfg</span>
+<span class="ansi-blue-fg">2020-07-03 09:19:22,292 sagemaker-containers INFO     Generating MANIFEST.in</span>
+<span class="ansi-blue-fg">2020-07-03 09:19:22,292 sagemaker-containers INFO     Installing module with the following command:</span>
 <span class="ansi-blue-fg">/miniconda3/bin/python -m pip install . </span>
 <span class="ansi-blue-fg">Processing /opt/ml/code</span>
 <span class="ansi-blue-fg">Building wheels for collected packages: train
   Building wheel for train (setup.py): started
   Building wheel for train (setup.py): finished with status &#39;done&#39;
-  Created wheel for train: filename=train-1.0.0-py2.py3-none-any.whl size=5968 sha256=6104e0207cc6fa9a1b49086e6e4cde90ffcfab738a6ef587109688f8e170a563
-  Stored in directory: /tmp/pip-ephem-wheel-cache-xap96_74/wheels/35/24/16/37574d11bf9bde50616c67372a334f94fa8356bc7164af8ca3</span>
+  Created wheel for train: filename=train-1.0.0-py2.py3-none-any.whl size=6863 sha256=21d6a4c5da80d14cc44a0be9a049919d9062554bc60139f64cfaebc1018ee29f
+  Stored in directory: /tmp/pip-ephem-wheel-cache-3x3ttshg/wheels/35/24/16/37574d11bf9bde50616c67372a334f94fa8356bc7164af8ca3</span>
 <span class="ansi-blue-fg">Successfully built train</span>
 <span class="ansi-blue-fg">Installing collected packages: train</span>
 <span class="ansi-blue-fg">Successfully installed train-1.0.0</span>
-<span class="ansi-blue-fg">2020-07-02 14:52:25,435 sagemaker-containers INFO     No GPUs detected (normal if no gpus installed)</span>
-<span class="ansi-blue-fg">2020-07-02 14:52:25,448 sagemaker-containers INFO     Invoking user script
+<span class="ansi-blue-fg">2020-07-03 09:19:23,694 sagemaker-containers INFO     No GPUs detected (normal if no gpus installed)</span>
+<span class="ansi-blue-fg">2020-07-03 09:19:23,707 sagemaker-containers INFO     Invoking user script
 </span>
 <span class="ansi-blue-fg">Training Env:
 </span>
@@ -13525,10 +13574,7 @@ Test passed!
     &#34;hosts&#34;: [
         &#34;algo-1&#34;
     ],
-    &#34;hyperparameters&#34;: {
-        &#34;n_estimators&#34;: 100,
-        &#34;min_samples_leaf&#34;: 3
-    },
+    &#34;hyperparameters&#34;: {},
     &#34;input_config_dir&#34;: &#34;/opt/ml/input/config&#34;,
     &#34;input_data_config&#34;: {
         &#34;train&#34;: {
@@ -13539,11 +13585,11 @@ Test passed!
     },
     &#34;input_dir&#34;: &#34;/opt/ml/input&#34;,
     &#34;is_master&#34;: true,
-    &#34;job_name&#34;: &#34;sagemaker-scikit-learn-2020-07-02-14-49-29-572&#34;,
+    &#34;job_name&#34;: &#34;sagemaker-scikit-learn-2020-07-03-09-16-43-723&#34;,
     &#34;log_level&#34;: 20,
     &#34;master_hostname&#34;: &#34;algo-1&#34;,
     &#34;model_dir&#34;: &#34;/opt/ml/model&#34;,
-    &#34;module_dir&#34;: &#34;s3://sagemaker-ap-south-1-161736531006/sagemaker-scikit-learn-2020-07-02-14-49-29-572/source/sourcedir.tar.gz&#34;,
+    &#34;module_dir&#34;: &#34;s3://sagemaker-ap-south-1-161736531006/sagemaker-scikit-learn-2020-07-03-09-16-43-723/source/sourcedir.tar.gz&#34;,
     &#34;module_name&#34;: &#34;train&#34;,
     &#34;network_interface_name&#34;: &#34;eth0&#34;,
     &#34;num_cpus&#34;: 4,
@@ -13565,7 +13611,7 @@ Test passed!
 </span>
 <span class="ansi-blue-fg">SM_HOSTS=[&#34;algo-1&#34;]</span>
 <span class="ansi-blue-fg">SM_NETWORK_INTERFACE_NAME=eth0</span>
-<span class="ansi-blue-fg">SM_HPS={&#34;min_samples_leaf&#34;:3,&#34;n_estimators&#34;:100}</span>
+<span class="ansi-blue-fg">SM_HPS={}</span>
 <span class="ansi-blue-fg">SM_USER_ENTRY_POINT=train.py</span>
 <span class="ansi-blue-fg">SM_FRAMEWORK_PARAMS={}</span>
 <span class="ansi-blue-fg">SM_RESOURCE_CONFIG={&#34;current_host&#34;:&#34;algo-1&#34;,&#34;hosts&#34;:[&#34;algo-1&#34;],&#34;network_interface_name&#34;:&#34;eth0&#34;}</span>
@@ -13582,29 +13628,28 @@ Test passed!
 <span class="ansi-blue-fg">SM_NUM_CPUS=4</span>
 <span class="ansi-blue-fg">SM_NUM_GPUS=0</span>
 <span class="ansi-blue-fg">SM_MODEL_DIR=/opt/ml/model</span>
-<span class="ansi-blue-fg">SM_MODULE_DIR=s3://sagemaker-ap-south-1-161736531006/sagemaker-scikit-learn-2020-07-02-14-49-29-572/source/sourcedir.tar.gz</span>
-<span class="ansi-blue-fg">SM_TRAINING_ENV={&#34;additional_framework_parameters&#34;:{},&#34;channel_input_dirs&#34;:{&#34;train&#34;:&#34;/opt/ml/input/data/train&#34;},&#34;current_host&#34;:&#34;algo-1&#34;,&#34;framework_module&#34;:&#34;sagemaker_sklearn_container.training:main&#34;,&#34;hosts&#34;:[&#34;algo-1&#34;],&#34;hyperparameters&#34;:{&#34;min_samples_leaf&#34;:3,&#34;n_estimators&#34;:100},&#34;input_config_dir&#34;:&#34;/opt/ml/input/config&#34;,&#34;input_data_config&#34;:{&#34;train&#34;:{&#34;RecordWrapperType&#34;:&#34;None&#34;,&#34;S3DistributionType&#34;:&#34;FullyReplicated&#34;,&#34;TrainingInputMode&#34;:&#34;File&#34;}},&#34;input_dir&#34;:&#34;/opt/ml/input&#34;,&#34;is_master&#34;:true,&#34;job_name&#34;:&#34;sagemaker-scikit-learn-2020-07-02-14-49-29-572&#34;,&#34;log_level&#34;:20,&#34;master_hostname&#34;:&#34;algo-1&#34;,&#34;model_dir&#34;:&#34;/opt/ml/model&#34;,&#34;module_dir&#34;:&#34;s3://sagemaker-ap-south-1-161736531006/sagemaker-scikit-learn-2020-07-02-14-49-29-572/source/sourcedir.tar.gz&#34;,&#34;module_name&#34;:&#34;train&#34;,&#34;network_interface_name&#34;:&#34;eth0&#34;,&#34;num_cpus&#34;:4,&#34;num_gpus&#34;:0,&#34;output_data_dir&#34;:&#34;/opt/ml/output/data&#34;,&#34;output_dir&#34;:&#34;/opt/ml/output&#34;,&#34;output_intermediate_dir&#34;:&#34;/opt/ml/output/intermediate&#34;,&#34;resource_config&#34;:{&#34;current_host&#34;:&#34;algo-1&#34;,&#34;hosts&#34;:[&#34;algo-1&#34;],&#34;network_interface_name&#34;:&#34;eth0&#34;},&#34;user_entry_point&#34;:&#34;train.py&#34;}</span>
-<span class="ansi-blue-fg">SM_USER_ARGS=[&#34;--min_samples_leaf&#34;,&#34;3&#34;,&#34;--n_estimators&#34;,&#34;100&#34;]</span>
+<span class="ansi-blue-fg">SM_MODULE_DIR=s3://sagemaker-ap-south-1-161736531006/sagemaker-scikit-learn-2020-07-03-09-16-43-723/source/sourcedir.tar.gz</span>
+<span class="ansi-blue-fg">SM_TRAINING_ENV={&#34;additional_framework_parameters&#34;:{},&#34;channel_input_dirs&#34;:{&#34;train&#34;:&#34;/opt/ml/input/data/train&#34;},&#34;current_host&#34;:&#34;algo-1&#34;,&#34;framework_module&#34;:&#34;sagemaker_sklearn_container.training:main&#34;,&#34;hosts&#34;:[&#34;algo-1&#34;],&#34;hyperparameters&#34;:{},&#34;input_config_dir&#34;:&#34;/opt/ml/input/config&#34;,&#34;input_data_config&#34;:{&#34;train&#34;:{&#34;RecordWrapperType&#34;:&#34;None&#34;,&#34;S3DistributionType&#34;:&#34;FullyReplicated&#34;,&#34;TrainingInputMode&#34;:&#34;File&#34;}},&#34;input_dir&#34;:&#34;/opt/ml/input&#34;,&#34;is_master&#34;:true,&#34;job_name&#34;:&#34;sagemaker-scikit-learn-2020-07-03-09-16-43-723&#34;,&#34;log_level&#34;:20,&#34;master_hostname&#34;:&#34;algo-1&#34;,&#34;model_dir&#34;:&#34;/opt/ml/model&#34;,&#34;module_dir&#34;:&#34;s3://sagemaker-ap-south-1-161736531006/sagemaker-scikit-learn-2020-07-03-09-16-43-723/source/sourcedir.tar.gz&#34;,&#34;module_name&#34;:&#34;train&#34;,&#34;network_interface_name&#34;:&#34;eth0&#34;,&#34;num_cpus&#34;:4,&#34;num_gpus&#34;:0,&#34;output_data_dir&#34;:&#34;/opt/ml/output/data&#34;,&#34;output_dir&#34;:&#34;/opt/ml/output&#34;,&#34;output_intermediate_dir&#34;:&#34;/opt/ml/output/intermediate&#34;,&#34;resource_config&#34;:{&#34;current_host&#34;:&#34;algo-1&#34;,&#34;hosts&#34;:[&#34;algo-1&#34;],&#34;network_interface_name&#34;:&#34;eth0&#34;},&#34;user_entry_point&#34;:&#34;train.py&#34;}</span>
+<span class="ansi-blue-fg">SM_USER_ARGS=[]</span>
 <span class="ansi-blue-fg">SM_OUTPUT_INTERMEDIATE_DIR=/opt/ml/output/intermediate</span>
 <span class="ansi-blue-fg">SM_CHANNEL_TRAIN=/opt/ml/input/data/train</span>
-<span class="ansi-blue-fg">SM_HP_N_ESTIMATORS=100</span>
-<span class="ansi-blue-fg">SM_HP_MIN_SAMPLES_LEAF=3</span>
 <span class="ansi-blue-fg">PYTHONPATH=/miniconda3/bin:/miniconda3/lib/python37.zip:/miniconda3/lib/python3.7:/miniconda3/lib/python3.7/lib-dynload:/miniconda3/lib/python3.7/site-packages
 </span>
 <span class="ansi-blue-fg">Invoking script with the following command:
 </span>
-<span class="ansi-blue-fg">/miniconda3/bin/python -m train --min_samples_leaf 3 --n_estimators 100
+<span class="ansi-blue-fg">/miniconda3/bin/python -m train
 
 </span>
 <span class="ansi-blue-fg">/miniconda3/lib/python3.7/site-packages/sklearn/externals/joblib/externals/cloudpickle/cloudpickle.py:47: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module&#39;s documentation for alternative uses
   import imp</span>
-<span class="ansi-blue-fg">2020-07-02 14:52:26,785 sagemaker-containers INFO     Reporting training SUCCESS</span>
+<span class="ansi-blue-fg">2020-07-03 09:19:24,917 sagemaker-containers INFO     Reporting training SUCCESS</span>
 
-2020-07-02 14:52:35 Completed - Training job completed
-Training seconds: 59
-Billable seconds: 59
-CPU times: user 472 ms, sys: 3.52 ms, total: 475 ms
-Wall time: 3min 41s
+2020-07-03 09:19:33 Uploading - Uploading generated training model
+2020-07-03 09:19:33 Completed - Training job completed
+Training seconds: 45
+Billable seconds: 45
+CPU times: user 392 ms, sys: 20.1 ms, total: 412 ms
+Wall time: 3min 11s
 </pre>
 </div>
 </div>
@@ -13637,9 +13682,8 @@ Wall time: 3min 41s
 <span class="c1"># uncomment, if needed</span>
 <span class="c1"># from sagemaker.pytorch import PyTorchModel</span>
 
-
 <span class="c1"># deploy your model to create a predictor</span>
-<span class="n">predictor</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">deploy</span><span class="p">(</span><span class="n">instance_type</span><span class="o">=</span><span class="s2">&quot;ml.m4.xlarge&quot;</span><span class="p">,</span> <span class="n">initial_instance_count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">predictor</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">deploy</span><span class="p">(</span><span class="n">instance_type</span><span class="o">=</span><span class="s2">&quot;ml.t2.medium&quot;</span><span class="p">,</span> <span class="n">initial_instance_count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13656,8 +13700,8 @@ Wall time: 3min 41s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>-------------!CPU times: user 221 ms, sys: 16.4 ms, total: 237 ms
-Wall time: 6min 31s
+<pre>---------------!CPU times: user 248 ms, sys: 11.6 ms, total: 260 ms
+Wall time: 7min 31s
 </pre>
 </div>
 </div>
@@ -13781,10 +13825,10 @@ Wall time: 6min 31s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.0
+<pre>0.96
 
 Predicted class labels: 
-[1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0]
+[1 1 1 1 1 1 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 1 1 0 0]
 
 True class labels: 
 [1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0]
@@ -13825,7 +13869,7 @@ True class labels:
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>False positives: 0
-False negatives: 0
+False negatives: 1
 </pre>
 </div>
 </div>
@@ -13846,8 +13890,8 @@ False negatives: 0
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong> Answer</strong>:</p>
 <ul>
-<li>Model produced zero false positives and zero false negatives. </li>
-<li>The model is fitted well with the number of epochs and manages to get zero errors.</li>
+<li>Model produced zero false positives and 1 false negatives. </li>
+<li>This may be because our dataset is small </li>
 </ul>
 
 </div>
@@ -13865,13 +13909,8 @@ False negatives: 0
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong> Answer</strong>:</p>
 <ul>
-<li>First choice was to diversify the technology that I used. As PyTorch and the built-in algorithms have already been used before in the program I opted for sklearn.</li>
-<li>Second choice was which sklearn algorithm to use. As tree-based models usually work pretty well in supervised problems like this I reduced my choice to those. <ul>
-<li>Among tree-based methods I excluded DecisionTreeClassifier as it usually requires a lot of tuning</li>
-<li>Then, I tried the AdaBoost algorithm for the same reason I excluded DecisionTreeClassifier, i.e. it usually does not require heavy tuning. Unfortunately, the model only got to accuracy of 0.88</li>
-<li>Hence, I used the RandomForestClassifier with some common choices for the hyperparameter and the result is 0.92% accuracy.</li>
-</ul>
-</li>
+<li>We have a problem with binary classification, and very few samples.</li>
+<li>A Linear Support Vector Classification is a very good choice as it provides simple 1 or 0 in place of like Logistic Regression probabilities</li>
 </ul>
 
 </div>
@@ -13894,12 +13933,7 @@ False negatives: 0
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># uncomment and fill in the line below!</span>
 <span class="c1"># &lt;name_of_deployed_predictor&gt;.delete_endpoint()</span>
 
-<span class="k">def</span> <span class="nf">delete_endpoint</span><span class="p">(</span><span class="n">predictor</span><span class="p">):</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;sagemaker&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">delete_endpoint</span><span class="p">(</span><span class="n">EndpointName</span><span class="o">=</span><span class="n">predictor</span><span class="o">.</span><span class="n">endpoint</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Deleted </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predictor</span><span class="o">.</span><span class="n">endpoint</span><span class="p">))</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Already deleted: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predictor</span><span class="o">.</span><span class="n">endpoint</span><span class="p">))</span>
+<span class="n">predictor</span><span class="o">.</span><span class="n">delete_endpoint</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13942,22 +13976,22 @@ False negatives: 0
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[{&#39;ResponseMetadata&#39;: {&#39;RequestId&#39;: &#39;FE8A09EC88286FF3&#39;,
-   &#39;HostId&#39;: &#39;xLYv2b1HJTdfSdHHoH+dnHOgiVbPairAaQhixymBuyUtC1v671eRHalsQ63CxO9I1B26H8++O64=&#39;,
+<pre>[{&#39;ResponseMetadata&#39;: {&#39;RequestId&#39;: &#39;A1593AFF6D99EF9B&#39;,
+   &#39;HostId&#39;: &#39;4rC+a8HEQLeDUcipvmwlekc2BoTnBqPqx+1dWJGXI/C+Huobb6976l9X9ko5Om0s1sm/fBr3+TY=&#39;,
    &#39;HTTPStatusCode&#39;: 200,
-   &#39;HTTPHeaders&#39;: {&#39;x-amz-id-2&#39;: &#39;xLYv2b1HJTdfSdHHoH+dnHOgiVbPairAaQhixymBuyUtC1v671eRHalsQ63CxO9I1B26H8++O64=&#39;,
-    &#39;x-amz-request-id&#39;: &#39;FE8A09EC88286FF3&#39;,
-    &#39;date&#39;: &#39;Thu, 02 Jul 2020 14:59:44 GMT&#39;,
+   &#39;HTTPHeaders&#39;: {&#39;x-amz-id-2&#39;: &#39;4rC+a8HEQLeDUcipvmwlekc2BoTnBqPqx+1dWJGXI/C+Huobb6976l9X9ko5Om0s1sm/fBr3+TY=&#39;,
+    &#39;x-amz-request-id&#39;: &#39;A1593AFF6D99EF9B&#39;,
+    &#39;date&#39;: &#39;Fri, 03 Jul 2020 09:27:28 GMT&#39;,
     &#39;connection&#39;: &#39;close&#39;,
     &#39;content-type&#39;: &#39;application/xml&#39;,
     &#39;transfer-encoding&#39;: &#39;chunked&#39;,
     &#39;server&#39;: &#39;AmazonS3&#39;},
    &#39;RetryAttempts&#39;: 0},
-  &#39;Deleted&#39;: [{&#39;Key&#39;: &#39;sagemaker-scikit-learn-2020-07-02-14-49-29-572/debug-output/training_job_end.ts&#39;},
+  &#39;Deleted&#39;: [{&#39;Key&#39;: &#39;sagemaker-scikit-learn-2020-07-03-09-16-43-723/source/sourcedir.tar.gz&#39;},
    {&#39;Key&#39;: &#39;sagemaker/plagiarism-data/test.csv&#39;},
-   {&#39;Key&#39;: &#39;sagemaker-scikit-learn-2020-07-02-14-49-29-572/output/model.tar.gz&#39;},
-   {&#39;Key&#39;: &#39;sagemaker/plagiarism-data/train.csv&#39;},
-   {&#39;Key&#39;: &#39;sagemaker-scikit-learn-2020-07-02-14-49-29-572/source/sourcedir.tar.gz&#39;}]}]</pre>
+   {&#39;Key&#39;: &#39;sagemaker-scikit-learn-2020-07-03-09-16-43-723/output/model.tar.gz&#39;},
+   {&#39;Key&#39;: &#39;sagemaker-scikit-learn-2020-07-03-09-16-43-723/debug-output/training_job_end.ts&#39;},
+   {&#39;Key&#39;: &#39;sagemaker/plagiarism-data/train.csv&#39;}]}]</pre>
 </div>
 
 </div>
